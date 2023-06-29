@@ -18,21 +18,21 @@
 NC = int(input())  # Enter the number of test cases
 
 test_cases = []
-for case in range(NC):
-    n, k = map(int, input().split())  # Enter the values of n and k for case
-    test_cases.append((n, k))
+for case in range(1, NC + 1):
+    num_people, step_size = map(int, input().split())  # Enter the number of people and step size for the case
+    test_cases.append((num_people, step_size))
 
 results = []
-for case, (n, k) in enumerate(test_cases):
-    circle = list(range(1, n + 1))
-    index = 0
+for case, (num_people, step_size) in enumerate(test_cases, start=1):
+    circle = list(range(1, num_people + 1))
+    current_index = 0
 
     while len(circle) > 1:
-        index = (index + k - 1) % len(circle)
-        circle.pop(index)
+        current_index = (current_index + step_size - 1) % len(circle)
+        circle.pop(current_index)
 
-    remaining = circle[0]
-    results.append((case, remaining))
+    remaining_person = circle[0]
+    results.append((case, remaining_person))
 
-for case, remaining in results:
-    print("Case {}: {}".format(case + 1, remaining))
+for case, remaining_person in results:
+    print("Case {}: {}".format(case, remaining_person))
