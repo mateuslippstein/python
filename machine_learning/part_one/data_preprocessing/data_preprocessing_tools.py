@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-dataset = pd.read_csv('/home/mlippstein/Projects/ml/python/machine_learning/part_one/data_preprocessing/Data.csv')
+dataset = pd.read_csv('machine_learning/part_one/data_preprocessing/data/Data.csv')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 print(X)
